@@ -1,0 +1,22 @@
+.container {
+    @apply bg-blue-700 w-full flex flex-col	;
+}
+.category_header {
+    @apply flex flex-row justify-between font-bold	
+}
+.category_title {
+    @apply text-3xl font-bold flex items-center mb-8
+}
+.category_title > h2 {
+    @apply pl-2 pb-[3px]
+}
+.category_view {
+    @apply text-xl
+
+}
+/* .container > .nav {
+    @apply flex bg-red-500
+}
+.container > .nav > .navitem{
+    @apply flex justify-center items-center ml-4 bg-green-500 h-[50px] w-[50px]
+} */

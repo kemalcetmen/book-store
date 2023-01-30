@@ -1,0 +1,24 @@
+.container {
+    @apply bg-[#f4f4ff] w-[300px] h-[433px] p-5
+    flex flex-col items-center justify-between
+    border-[1px] border-[#ddddeb]
+    rounded	
+}
+.image {
+    @apply h-[300px] w-[200px] relative rounded	
+}
+.image > img {
+    @apply rounded	
+}
+.footer {
+    @apply py-[10px] w-full flex justify-between
+}
+.texts > h4 {
+    @apply text-xl font-semibold mb-1
+}
+.texts > p {
+    @apply text-base font-semibold
+}
+.price {
+    @apply self-end text-2xl text-[#6251DD] font-bold
+}

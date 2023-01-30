@@ -1,0 +1,15 @@
+.container {
+    @apply bg-blue-700 w-full flex flex-col ;
+}
+.swiper {
+    @apply w-full ;
+}
+.category_header {
+    @apply flex flex-row justify-between font-bold	
+}
+.category_title {
+    @apply text-3xl
+}
+.category_view {
+    @apply text-xl
+}

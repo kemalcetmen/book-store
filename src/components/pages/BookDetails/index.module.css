@@ -1,0 +1,33 @@
+.container {
+    @apply bg-blue-700 w-full flex flex-col	;
+}
+.header {
+    @apply flex flex-row justify-between font-bold	
+}
+.title {
+    @apply text-3xl font-bold flex items-center mb-8
+}
+.title > h2 {
+    @apply pl-2 pb-[3px]
+}
+.content {
+    @apply flex flex-row
+}
+.image_container {
+    @apply bg-[#f4f4ff] p-[60px]
+    border-[1px] border-[#ddddeb]
+    rounded
+}
+.image {
+    @apply h-[450px] w-[300px] relative	rounded
+}
+.image >img {
+    @apply rounded
+}
+.texts {
+    @apply ml-20
+}
+
+.texts_title > h1 {
+    @apply text-[40px] font-semibold
+}
