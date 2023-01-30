@@ -17,7 +17,7 @@ const index = ({ children }: Props) => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Header />
-            <main className="px-[60px] pt-10">
+            <main className="px-[60px] py-10">
                 {children}
             </main>
         </>

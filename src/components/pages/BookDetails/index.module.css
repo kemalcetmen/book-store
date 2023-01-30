@@ -1,5 +1,5 @@
 .container {
-    @apply bg-blue-700 w-full flex flex-col	;
+    @apply w-full flex flex-col	;
 }
 .header {
     @apply flex flex-row justify-between font-bold	

@@ -3,7 +3,6 @@ import styles from './index.module.css'
 import Cards from '../../Cards'
 import { IoIosArrowBack } from 'react-icons/io';
 
-
 const index = () => {
     return (
         <div className={styles.container}>
