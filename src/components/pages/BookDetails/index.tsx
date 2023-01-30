@@ -4,7 +4,7 @@ import Cards from '../../Cards'
 import { IoIosArrowBack } from 'react-icons/io';
 import Image from 'next/image'
 
-const thebook = {
+const book = {
     "author": "Oğuz Atay",
     "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ80VND5MFLv3cXobZjMpeiaac-50_yjNatg&usqp=CAU",
     "created_at": "2023-01-09T17:17:09.444487",
@@ -35,8 +35,8 @@ const index = () => {
                 <div className={styles.image_container}>
                     <div className={styles.image}>
                         <Image
-                            src={thebook.cover}
-                            alt={thebook.name}
+                            src={book.cover}
+                            alt={book.name}
                             fill
                         />
                     </div>
@@ -44,10 +44,10 @@ const index = () => {
                 <div className={styles.texts}>
                     <div className={styles.texts_title}>
                         <h1>
-                            {thebook.name}
+                            {book.name}
                         </h1>
                         <h2>
-                            {thebook.author}
+                            {book.author}
                         </h2>
                     </div>
                     <div className={styles.texts_content}>
@@ -55,18 +55,19 @@ const index = () => {
                             Summary
                         </h3>
                         <p>
-                            {thebook.description}
+                            {book.description}
                         </p>
                     </div>
-
                 </div>
-
             </div>
             <div className={styles.footer}>
                 <div className={styles.buy}>
-                    <h2>
-                        Book Details
-                    </h2>
+                    <p>
+                        {book.price} $
+                    </p>
+                    <p>
+                        Buy Now
+                    </p>
                 </div>
             </div>
         </div>

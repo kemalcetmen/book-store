@@ -5,7 +5,7 @@
     @apply flex flex-row justify-between font-bold	
 }
 .title {
-    @apply text-3xl font-bold flex items-center mb-8
+    @apply text-3xl font-bold flex items-center mb-8 cursor-pointer
 }
 .title > h2 {
     @apply pl-2 pb-[3px]
@@ -14,9 +14,8 @@
     @apply flex flex-row
 }
 .image_container {
-    @apply bg-[#f4f4ff] p-[60px]
-    border-[1px] border-[#ddddeb]
-    rounded
+    @apply bg-[#f4f4ff] p-[60px] border-[1px] 
+    border-[#ddddeb] rounded h-[570px] w-[420px];
 }
 .image {
     @apply h-[450px] w-[300px] relative	rounded
@@ -27,7 +26,26 @@
 .texts {
     @apply ml-20
 }
-
+.texts_title {
+    @apply mb-[60px]
+}
 .texts_title > h1 {
     @apply text-[40px] font-semibold
+}
+.texts_title > h2 {
+    @apply text-[32px] opacity-60 font-semibold
+}
+.texts_content > h3 {
+    @apply text-2xl font-semibold pb-[10px]
+}
+.texts_content > p {
+    @apply text-xl opacity-60 text-[#090937]
+}
+
+.footer {
+    @apply flex justify-end
+}
+.buy {
+    @apply bg-[#EF6B4A] w-[400px] h-[60px] rounded flex justify-between
+    p-5 items-center text-white cursor-pointer mt-10
 }
