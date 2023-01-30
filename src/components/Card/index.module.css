@@ -17,8 +17,33 @@
     @apply text-xl font-semibold mb-1
 }
 .texts > p {
-    @apply text-base font-semibold
+    @apply text-base font-semibold opacity-60
 }
 .price {
     @apply self-end text-2xl text-[#6251DD] font-bold
+}
+
+.containerH {
+    @apply bg-[#f4f4ff] w-[320px] h-[200px] p-2.5
+    flex flex-row items-center
+    border-[1px] border-[#ddddeb]
+    rounded	
+}
+.imageH {
+    @apply h-[180px] w-[120px] relative rounded
+}
+.imageH > img {
+    @apply rounded	
+}
+.footerH {
+    @apply py-2.5 pl-5 h-full w-auto flex flex-col justify-between
+}
+.textsH > h4 {
+    @apply text-lg font-semibold mb-1
+}
+.textsH > p {
+    @apply text-sm font-semibold opacity-60
+}
+.priceH {
+    @apply text-xl text-[#6251DD] font-bold
 }

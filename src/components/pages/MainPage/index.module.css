@@ -1,15 +1,22 @@
 .container {
-    @apply bg-blue-700 w-full flex flex-col ;
+    @apply w-full flex flex-col ;
 }
 .swiper {
     @apply w-full ;
 }
 .category_header {
-    @apply flex flex-row justify-between font-bold	
+    @apply flex flex-row justify-between font-bold items-end mb-5
 }
 .category_title {
     @apply text-3xl
 }
 .category_view {
-    @apply text-xl
+    @apply text-xl text-[#EF6B4A] pr-12 cursor-pointer
 }
+.cards>ul {
+    @apply flex-nowrap	mb-[60px]
+}
+/* .cards > ul > li  {
+    @apply inline	
+  
+} */

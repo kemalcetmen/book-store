@@ -6,18 +6,21 @@ type Props = {
     book: Book
 }
 
+const horizontal = false
+
 const index = ({ book }: Props) => {
     return (
-        <div className={styles.container}>
-            <div className={styles.image}>
+        <div className={!horizontal ? styles.container : styles.containerH}>
+            <div className={!horizontal ? styles.image : styles.imageH}>
                 <Image
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ80VND5MFLv3cXobZjMpeiaac-50_yjNatg&usqp=CAU"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ80VND5MFLv3cXobZjMpeiaac-50_yjNatg&usqp=CAU"
                     alt={book.name}
                     fill
+
                 />
             </div>
-            <div className={styles.footer}>
-                <div className={styles.texts}>
+            <div className={!horizontal ? styles.footer : styles.footerH}>
+                <div className={!horizontal ? styles.texts : styles.textsH}>
                     <h4>
                         {book.name}
                     </h4>
@@ -25,7 +28,7 @@ const index = ({ book }: Props) => {
                         {book.author}
                     </p>
                 </div>
-                <div className={styles.price}>
+                <div className={!horizontal ? styles.price : styles.priceH}>
                     {book.price} $
                 </div>
             </div>

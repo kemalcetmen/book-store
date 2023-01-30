@@ -1,5 +1,5 @@
 .container {
-    @apply bg-inherit p-0 flex gap-6 flex-wrap justify-center
+    @apply bg-inherit p-0 flex gap-6 flex-wrap
 }
 .container > li {
     @apply bg-inherit p-0 inline gap-6 flex-wrap;

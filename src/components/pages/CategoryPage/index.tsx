@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './index.module.css'
 import Cards from '../../Cards'
 import { IoIosArrowBack } from 'react-icons/io';
+import {cards} from '../../../../cards'
 
 const index = () => {
     return (
@@ -16,7 +17,7 @@ const index = () => {
                     </div>
                 </div>
                 <div className={styles.cards}>
-                    <Cards />
+                    <Cards books={cards}/>
                 </div>
             </div>
         </div>
