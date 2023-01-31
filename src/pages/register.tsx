@@ -1,16 +1,16 @@
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
-import MainPage from '@/components/pages/MainPage'
+import RegisterPage from '@/components/pages/Register'
 
-import MainLayout from '@/components/layouts/Main'
+import LoginLayout from '@/components/layouts/Login'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function index() {
   return (
-    <MainPage/>
+    <RegisterPage/>
   )
 }
 
-index.layout = MainLayout
+index.layout = LoginLayout
