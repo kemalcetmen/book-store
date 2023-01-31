@@ -1,10 +1,18 @@
 .container {
-    @apply bg-red-700 h-[120px] w-full flex items-center justify-between
-    px-[60px]	;
+    @apply h-[120px] w-full flex items-center justify-between
+    px-[11.5px] sm:px-[60px];
 }
-.container > .nav {
-    @apply flex bg-red-500
+.container .nav {
+    @apply flex 
 }
-.container > .nav > .navitem{
-    @apply flex justify-center items-center ml-4 bg-green-500 h-[50px] w-[50px]
+.container .nav .navitem{
+    @apply flex justify-center rounded items-center ml-4 bg-[#F4F4FF] 
+    cursor-pointer h-[50px] w-[50px]
+}
+.container .search {
+    @apply w-1/2 flex bg-[#F4F4FF] items-center py-[11.5px] px-5 rounded;
+}
+
+.container .search input {
+    @apply flex bg-[#F4F4FF] w-full pl-3 bg-inherit focus:outline-none 
 }
