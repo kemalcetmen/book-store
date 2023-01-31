@@ -10,6 +10,8 @@
 /coverage
 /pitonex.json
 /products.json
+/cards.ts
+/categories.json
 # next.js
 /.next/
 /out/
