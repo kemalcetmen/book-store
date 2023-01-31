@@ -1,19 +1,63 @@
 import React, { useState } from 'react'
 import styles from './index.module.css'
 import Cards from '../../Cards'
-import {cards} from '../../../../cards'
-import categories from '../../../../zjsons/categories.json'
+import { cards } from '../../../../cards'
+import categories from '../../../../categories.json'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Scrollbar } from 'swiper';
 
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import Image from 'next/image'
 const index = () => {
-    const [bestSellers, setBestSellers] = useState(cards.slice(0 , 4))
-    const [classics, setClassics] = useState(cards.slice(0 , 4))
-    const [children, setChildren] = useState(cards.slice(0 , 4))
-    const [philosophy, setPhilosophy] = useState(cards.slice(0 , 4))
+    const [bestSellers, setBestSellers] = useState(cards.slice(0, 4))
+    const [classics, setClassics] = useState(cards.slice(0, 4))
+    const [children, setChildren] = useState(cards.slice(0, 4))
+    const [philosophy, setPhilosophy] = useState(cards.slice(0, 4))
 
     return (
         <div className={styles.container}>
-            <div className={styles.swiper}>
-                swiper
+            <div className={styles.the_swiper}>
+                <Swiper
+                    spaceBetween={50}
+                    slidesPerView={1}
+                    modules={[Pagination, Scrollbar]}
+                    pagination={{ clickable: true }}
+
+                >
+                    <SwiperSlide>
+                    <div className={styles.slide_container}>
+                            <div className={styles.image_container}>
+                                <div className={styles.texts}>
+                                    <p>25% discount</p>
+                                    all Paulo Coelho
+                                    books!
+                                </div>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className={styles.image_container}>
+                            <div className={styles.texts}>
+                                <p>25% discount</p>
+                                all Paulo Coelho
+                                books!
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className={styles.image_container}>
+                            <div className={styles.texts}>
+                                <p>25% discount</p>
+                                all Paulo Coelho
+                                books!
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                </Swiper>
             </div>
             <div className={styles.categories}>
                 <div className={styles.one_category}>
@@ -22,11 +66,11 @@ const index = () => {
                             Best Seller
                         </div>
                         <div className={styles.category_view}>
-                            View All 
+                            View All
                         </div>
                     </div>
                     <div className={styles.cards}>
-                        <Cards books={bestSellers}/>
+                        <Cards books={bestSellers} />
                     </div>
                 </div>
                 <div className={styles.oneCategory}>
@@ -39,7 +83,7 @@ const index = () => {
                         </div>
                     </div>
                     <div className={styles.cards}>
-                        <Cards books={classics}/>
+                        <Cards books={classics} />
                     </div>
                 </div>
                 <div className={styles.oneCategory}>
@@ -52,7 +96,7 @@ const index = () => {
                         </div>
                     </div>
                     <div className={styles.cards}>
-                        <Cards books={children}/>
+                        <Cards books={children} />
                     </div>
                 </div>
                 <div className={styles.oneCategory}>
@@ -65,7 +109,7 @@ const index = () => {
                         </div>
                     </div>
                     <div className={styles.cards}>
-                        <Cards books={philosophy}/>
+                        <Cards books={philosophy} />
                     </div>
                 </div>
             </div>

@@ -1,9 +1,35 @@
 .container {
     @apply w-full flex flex-col ;
 }
-.swiper {
-    @apply w-full ;
+.the_swiper {
+    @apply w-full h-[440px] mb-[92px] ;
 }
+.texts {
+    @apply  text-white w-[426px] font-medium;
+}
+.texts p{
+    @apply  text-[#F0B861] ;
+}
+.slide_container {
+    @apply w-full h-[440px] ;
+
+}
+.the_swiper .swiper-pagination-bullet-active {
+    background-color: #fff !important;
+}
+.image_container {
+    @apply  w-full text-[56px] h-[400px] py-[86px] pl-[60px] rounded-lg	;    
+    
+    background-image:
+    linear-gradient( rgba(29, 29, 78, 0.2), rgba(9, 9, 55, 0.7)),
+    url('https://s3-alpha-sig.figma.com/img/cd95/5723/457258a8c4363be0c373157e315e85c1?Expires=1676246400&Signature=f~GpbjmHAaHUmRcYAn8VRqSsYGbA9pRKaAkT67H5bMClle3evSjoXFBGVRyy1QTh1Xz~pyFLwcDlJGUT21IRq23ea0yVeekJzkUIoebL9QN4zGInk-mU~6QsOTV9vc-uPr8KVUl~cmeA0RCNl4uBdZ7Yt~x2qsKGgRi41n7w5DY3EkBFsIX42ifigDILLKxCf-BhG4O3dip6cYwGJKcZQMXRrq-WdiDuzob77C7KeerIZQI-VnWRGzvS5bydhOsma8pPjQaQw-ZvgQSidLO6lrShyhI6eKKHy9MYhqhIOVHc37hNRL9roFEaoPwftLYbFZiQBiDQvSdwTPEeYmnb6g__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4');
+    background-repeat: no-repeat;
+    background-position: 5% 68%;    
+    background-size: cover;
+
+
+}
+
 .category_header {
     @apply flex flex-row justify-between font-bold items-end mb-5
 }
