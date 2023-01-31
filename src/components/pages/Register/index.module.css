@@ -1,0 +1,38 @@
+.container {
+    @apply w-full flex flex-col items-center;
+}
+.container img {
+    @apply my-2
+}
+
+.header {
+    @apply self-start mb-5
+}
+.header p {
+    @apply text-2xl opacity-60
+}
+.header h1 {
+    @apply text-[32px] font-bold
+}
+.fields {
+    @apply flex flex-col mt-2 items-start text-xl;
+}
+.fields .label {
+    @apply flex flex-row ;
+}
+.fields  .label  label{
+    @apply font-semibold ;
+}
+.fields  .label  p{
+    @apply text-[10px] text-red-500 ml-4 pt-1 ;
+}
+.fields input {
+    @apply rounded border-[1px] w-[400px] h-[50px] px-4;
+}
+
+.container  button {
+    @apply  self-center text-white text-2xl bg-[#EF6B4A] w-full h-[50px] rounded mt-10;
+}
+.container  .the_button {
+    @apply flex justify-center items-center self-center border-[1px] border-[#6251DD] mt-1 text-[#6251DD] text-2xl w-full h-[50px] rounded;
+}

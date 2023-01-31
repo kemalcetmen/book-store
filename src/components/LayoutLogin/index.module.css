@@ -1,0 +1,19 @@
+.container{
+    @apply h-screen	 w-screen flex
+
+}
+.main {
+    @apply h-full w-auto m-auto
+}
+.image {
+    @apply relative;
+    height: 100vh;
+    width: 65vh ;
+    background-image: url("https://s3-alpha-sig.figma.com/img/e481/cdea/66f3916ec341be3dea98c07eb554c77b?Expires=1676246400&Signature=DHmBOZM9-6~LfKbvREuE5fhSg3nIvP18U4ZfaDonhaOjVQex04-EmtlzZxoIwuhWVOddNL-pB1qR5tmuwzEjWTbB7N~NsEfQoR0UiIhsXTOPRP1KUx74fbjCV53DSiBkgJt4WBGvG~cU9SPf5IWgLLJD4nfYQly~p-ZFZrolCg45a2OY~Ge78t8TcOsfmYAstU5k9oZnYO01SJ-1cumfWhjdNra~OUBw-OiyfskANTXVbMTzLl-UCiOMsEi2bDCuxnr3CW~NZWooQouvlS-Nigut0lWzKkxrXmkNIwByUAsw4PjR39bOZr23sAVb85yDcaZau1XH~~nbkWCIjFRsbw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4");
+    background-size: auto 100% ;
+}
+@media screen and (max-width: 1000px) {
+    .image {
+        @apply hidden;
+    }
+  }
