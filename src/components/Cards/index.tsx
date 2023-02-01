@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './index.module.css'
 import Card from '../Card'
-import { Book } from '../../../types/types'
+import { Book } from '../../../types/book'
 
 interface Props {
     books: Book[],

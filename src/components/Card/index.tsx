@@ -1,5 +1,5 @@
 import React from 'react'
-import { Book } from '../../../types/types'
+import { Book } from '../../../types/book'
 import styles from './index.module.css'
 import Image from 'next/image'
 type Props = {
