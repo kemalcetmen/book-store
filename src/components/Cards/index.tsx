@@ -4,7 +4,7 @@ import Card from '../Card'
 import { Book } from '../../../types/book'
 
 interface Props {
-    books: Book[],
+    books?: Book[],
 }
 const index = ({books}: Props) => {
     return (

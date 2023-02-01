@@ -1,14 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 // import styles from './index.module.css'
 import Header from './Header'
 import Head from 'next/head';
 import type { LayoutProps } from '../../../../types/pageWithLayout'
+import { fetchBooks } from '@/features/productsSlice'
+import { useAppDispatch, useAppSelector } from '@/store'
 
 interface Props {
     children: React.ReactNode;
 }
 
 const index : LayoutProps = ({ children }: Props) => {
+    const dispatch = useAppDispatch()
+    const {loading, error} = useAppSelector((state) => state.products)
+
+    useEffect(() => {
+        dispatch(fetchBooks());
+    }, []);
     return (
         <>
             <Head>

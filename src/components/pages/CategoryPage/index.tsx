@@ -2,9 +2,18 @@ import React from 'react'
 import styles from './index.module.css'
 import Cards from '../../Cards'
 import { IoIosArrowBack } from 'react-icons/io';
-import {cards} from '../../../../cards'
+import { useAppSelector } from '@/store'
 
-const index = () => {
+interface Props {
+    category?: string[] |string
+}
+const index = ({category}:Props) => {
+    const { books } = useAppSelector((state) => state.products)
+    const categotyProducts = books.filter(book => {
+        return book.category.toLowerCase() === category
+      })
+      console.log(categotyProducts)
+    
     return (
         <div className={styles.container}>
             <div className={styles.one_category}>
@@ -17,7 +26,7 @@ const index = () => {
                     </div>
                 </div>
                 <div className={styles.cards}>
-                    <Cards books={cards}/>
+                    <Cards books={categotyProducts}/>
                 </div>
             </div>
         </div>

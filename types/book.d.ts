@@ -8,9 +8,11 @@ export interface Book {
     price: number,
     sales: number,
     slug: string,
-    likes_aggregate : {
+    likes_aggregate? : {
         aggregate: {
             count: number
         }
     }
+    category: string,
+    category_id: number
 }

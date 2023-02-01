@@ -7,13 +7,13 @@ import { IconContext } from "react-icons";
 import { HiOutlineShoppingCart } from 'react-icons/hi';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { MdPersonOutline } from 'react-icons/md';
-
+import logo from "../../../../../public/Logo.svg"
 const index = () => {
     return (
         <header className={styles.container}>
             <div className={styles.logo}>
                 <Image
-                    src="./logo.svg"
+                    src={logo}
                     alt="logo"
                     width="60"
                     height="39"

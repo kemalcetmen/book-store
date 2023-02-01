@@ -7,16 +7,17 @@ export default function userHandler(req: NextApiRequest, res: NextApiResponse) {
 
     const url = `${THE_URl}products/${category}`
 
+    console.log(category)
     const options = {
         method: 'GET',
-        // headers: {
-        //   'content-type': 'application/json'
-        // }
+        headers: {
+          'content-type': 'application/json'
+        }
     };
     fetch(url, options)
         .then(a => {
-            console.log("a", a)
-            console.log("astatus", a.status)
+            // console.log("a", a)
+            // console.log("astatus", a.status)
             if (a.status === 200) { return a.json() }
             else { return Error }
         })
@@ -24,7 +25,7 @@ export default function userHandler(req: NextApiRequest, res: NextApiResponse) {
             res.status(200).json(json)
             res.status(400).json(json)
 
-            console.log("json", json)
+            // console.log("json", json)
         })
         .catch(err => console.error('error:' + err));
 }

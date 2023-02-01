@@ -1,22 +1,54 @@
 import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit"
 import axios from "axios"
+import { Categories } from "../../types/categories"
+import { Book } from "../../types/book"
 
 export const fetchBooks = createAsyncThunk("fetchBooks", async () => {
-    const { data } = await axios.get(`./list.json`);
-    return data
+    const { data } = await axios.get(`/api/categories/categories`);
+    // console.log(data);
+    let books: Book[] = []
+    const categories = data.category
+
+    for (const category of categories) {
+        const { data } = await axios.get(`/api/categories/${category.id}`);
+
+        for (const book of data.product) {
+            // const { data } = await axios.get(`/api/coverimage/${book.cover.split(".")[0]}`);
+
+            // const { data } = await axios.post(`https://assign-api.piton.com.tr/api/rest/cover_image`);
+            const { data } = await axios.post('https://assign-api.piton.com.tr/api/rest/cover_image', {
+                fileName: book.cover,
+            })
+
+            let onebook = {
+                ...book,
+                cover: data.action_product_image.url,
+                category: category.name,
+                category_id: category.id
+            }
+            books.push(onebook)
+        }
+    }
+    console.log(books)
+    return {
+        books:
+            books,
+        categories:
+            categories
+    }
 })
 
-interface Product {
-}
 
 interface ProductState {
-    products: Product[],
+    categories: Categories[],
+    books: Book[],
     loading: boolean,
     error: string,
 }
 
 const initialState: ProductState = {
-    products: [],
+    categories: [],
+    books: [],
     loading: false,
     error: "",
 }
@@ -25,8 +57,8 @@ const productsSlice = createSlice({
     name: "products",
     initialState,
     reducers: {
-        add: (state, action: PayloadAction<string>) => {
-        },
+        // add: (state, action: PayloadAction<string>) => {
+        // },
     },
     extraReducers: (builder) => {
         builder.addCase(fetchBooks.pending, (state) => {
@@ -36,7 +68,8 @@ const productsSlice = createSlice({
         builder.addCase(fetchBooks.fulfilled, (state, action) => {
             state.loading = false;
             state.error = "";
-            state.products = action.payload.data
+            state.books = action.payload.books
+            state.categories = action.payload.categories
         })
         builder.addCase(fetchBooks.rejected, (state) => {
             state.loading = false;
@@ -46,4 +79,4 @@ const productsSlice = createSlice({
 })
 
 export default productsSlice.reducer
-export const { add } = productsSlice.actions
+// export const { add } = productsSlice.actions
