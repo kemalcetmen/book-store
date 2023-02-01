@@ -16,7 +16,7 @@ const initialValues: User = {
 
 const index = () => {
     const login = (values: User) => {
-        fetch('/api/login', {
+        fetch('/api/auth/login', {
             method: 'POST',
             body: JSON.stringify(values),
             // signal
@@ -87,7 +87,6 @@ const index = () => {
                 </Formik>
             </div>
             <div className={styles.the_button}>Register</div>
-
         </div>
     )
 }

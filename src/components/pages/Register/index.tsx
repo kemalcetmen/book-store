@@ -18,7 +18,7 @@ const initialValues: User = {
 const index = () => {
     const register = (values: User) => {
         console.log(values)
-        fetch('/api/register', {
+        fetch('/api/auth/register', {
             method: 'POST',
             body: JSON.stringify(values),
             // signal
