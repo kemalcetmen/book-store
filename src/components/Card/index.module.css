@@ -2,7 +2,7 @@
     @apply bg-[#f4f4ff] w-[300px] h-[433px] p-5
     flex flex-col items-center justify-between
     border-[1px] border-[#ddddeb]
-    rounded	
+    rounded	cursor-pointer
 }
 .image {
     @apply h-[300px] w-[200px] relative rounded	
@@ -27,7 +27,7 @@
     @apply bg-[#f4f4ff] w-[320px] h-[200px] p-2.5
     flex flex-row items-center
     border-[1px] border-[#ddddeb]
-    rounded	
+    rounded	cursor-pointer
 }
 .imageH {
     @apply h-[180px] w-[120px] relative rounded

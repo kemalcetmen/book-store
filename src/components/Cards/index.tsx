@@ -5,14 +5,16 @@ import { Book } from '../../../types/book'
 
 interface Props {
     books?: Book[],
+    horizontal? : boolean
 }
-const index = ({books}: Props) => {
+const index = ({books, horizontal= false}: Props) => {
     return (
         <ul className={styles.container}>
             {books?.map((book: Book,i: number) => (
                 <li key={i}>
                     <Card
                         book={book}
+                        horizontal={horizontal}
                     />
                 </li>
             ))}

@@ -2,15 +2,17 @@ import React from 'react'
 import { Book } from '../../../types/book'
 import styles from './index.module.css'
 import Image from 'next/image'
+import Link from 'next/link'
+
 type Props = {
-    book: Book
+    book: Book,
+    horizontal: boolean
 }
 
-const horizontal = false
+const index = ({ book, horizontal }: Props) => {
 
-const index = ({ book }: Props) => {
     return (
-        <div className={!horizontal ? styles.container : styles.containerH}>
+        <Link href={`/book/${book.name}`} className={!horizontal ? styles.container : styles.containerH}>
             <div className={!horizontal ? styles.image : styles.imageH}>
                 <Image
                     src={book.cover}
@@ -31,7 +33,7 @@ const index = ({ book }: Props) => {
                     {book.price} $
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
 

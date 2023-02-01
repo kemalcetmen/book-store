@@ -9,7 +9,11 @@ export default function index() {
   const { book } = router.query
   const theBook = books.find(bok => bok.name === book)
   return (
-    <BookDetails book={theBook}/>
+    <>
+      {
+        theBook ? <BookDetails book={theBook} /> : "There is no book you want"
+      }
+    </>
   )
 }
 

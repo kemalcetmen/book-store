@@ -5,9 +5,9 @@
     @apply flex flex-row justify-between font-bold	
 }
 .title {
-    @apply text-3xl font-bold flex items-center mb-8 cursor-pointer
+    @apply text-3xl font-bold flex items-center mb-8 
 }
-.title > h2 {
+.title h2 {
     @apply pl-2 pb-[3px]
 }
 .content {

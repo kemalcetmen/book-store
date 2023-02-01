@@ -1,30 +1,29 @@
 import Image from 'next/image'
 import React from 'react'
 import styles from './index.module.css'
+import Link from 'next/link'
 import { TbSearch } from 'react-icons/tb';
-
 import { IconContext } from "react-icons";
 import { HiOutlineShoppingCart } from 'react-icons/hi';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { MdPersonOutline } from 'react-icons/md';
 import logo from "../../../../../public/Logo.svg"
+
 const index = () => {
     return (
         <header className={styles.container}>
-            <div className={styles.logo}>
+            <Link href="/" className={styles.logo}>
                 <Image
                     src={logo}
                     alt="logo"
                     width="60"
                     height="39"
                 />
-            </div>
+            </Link>
             <div className={styles.search}>
                 <TbSearch color="#9ca3af" />
                 <input
                     placeholder="Search"
-                // value={search}
-                // onChange={handleChange}
                 />
             </div>
             <IconContext.Provider value={{ color: "#090937", size: "25" }}>

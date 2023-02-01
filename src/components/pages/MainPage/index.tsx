@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './index.module.css'
 import Cards from '../../Cards'
+import Link from 'next/link'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Scrollbar } from 'swiper';
 import { useAppSelector } from '@/store'
@@ -12,7 +13,6 @@ import 'swiper/css/scrollbar';
 
 const index = () => {
     const { books, categories } = useAppSelector((state) => state.products)
-    console.log(books)
 
     return (
         <div className={styles.container}>
@@ -22,7 +22,6 @@ const index = () => {
                     slidesPerView={1}
                     modules={[Pagination, Scrollbar]}
                     pagination={{ clickable: true }}
-
                 >
                     {
                         [...Array(3)].map((e, i) =>
@@ -49,13 +48,12 @@ const index = () => {
                                 <div className={styles.category_title}>
                                     {category.name}
                                 </div>
-                                <div className={styles.category_view}>
+                                <Link href={`/category/${category.name}`} className={styles.category_view}>
                                     View All
-                                </div>
+                                </Link>
                             </div>
                             <div className={styles.cards}>
-                            {/* <Cards books={books.slice(0, 4)} /> */}
-                            <Cards books={books.filter(book => book.category===category.name).slice(0, 4)} />
+                                <Cards horizontal={true} books={books.filter(book => book.category === category.name).slice(0, 4)} />
                             </div>
                         </div>
                     )

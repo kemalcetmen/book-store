@@ -1,21 +1,19 @@
 import React from 'react'
 import styles from './index.module.css'
 import Image from 'next/image'
-import { IoIosArrowBack } from 'react-icons/io';
+import GoBack from '@/components/GoBack'
 import { Book } from '../../../../types/book'
 
 interface Props {
-    book?: Book
+    book: Book
 }
 
 const index = ({ book }: Props) => {
-
-    console.log(book)
     return (
         <div className={styles.container}>
             <div className={styles.header}>
                 <div className={styles.title}>
-                    <IoIosArrowBack />
+                    <GoBack/>
                     <h2>
                         Book Details
                     </h2>
@@ -24,24 +22,20 @@ const index = ({ book }: Props) => {
             <div className={styles.content}>
                 <div className={styles.image_container}>
                     <div className={styles.image}>
-                        {
-                            book &&
-                            <Image
-                                src={book?.cover}
-                                alt={book?.name}
-                                fill
-                            />
-                        }
-
+                        <Image
+                            src={book.cover}
+                            alt={book.name}
+                            fill
+                        />
                     </div>
                 </div>
                 <div className={styles.texts}>
                     <div className={styles.texts_title}>
                         <h1>
-                            {book?.name}
+                            {book.name}
                         </h1>
                         <h2>
-                            {book?.author}
+                            {book.author}
                         </h2>
                     </div>
                     <div className={styles.texts_content}>
@@ -49,7 +43,7 @@ const index = ({ book }: Props) => {
                             Summary
                         </h3>
                         <p>
-                            {book?.description}
+                            {book.description}
                         </p>
                     </div>
                 </div>
@@ -57,7 +51,7 @@ const index = ({ book }: Props) => {
             <div className={styles.footer}>
                 <div className={styles.buy}>
                     <p>
-                        {book?.price} $
+                        {book.price} $
                     </p>
                     <p>
                         Buy Now
