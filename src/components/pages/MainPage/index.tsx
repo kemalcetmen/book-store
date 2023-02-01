@@ -1,17 +1,16 @@
 import React, { useState } from 'react'
 import styles from './index.module.css'
 import Cards from '../../Cards'
-import { cards } from '../../../../cards'
+import cards from '../../../../cards.json'
 import categories from '../../../../categories.json'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Scrollbar } from 'swiper';
 
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import Image from 'next/image'
+
 const index = () => {
     const [bestSellers, setBestSellers] = useState(cards.slice(0, 4))
     const [classics, setClassics] = useState(cards.slice(0, 4))

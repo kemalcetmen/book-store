@@ -10,13 +10,21 @@ import Image from 'next/image'
 import User from '../../../../types/user'
 
 const initialValues: User = {
-    firstName: "",
-    lastName: "",
     email: "",
     password: "",
 }
 
 const index = () => {
+    const login = (values: User) => {
+        fetch('/api/login', {
+            method: 'POST',
+            body: JSON.stringify(values),
+            // signal
+          }).then((res) => console.log(res))
+            // .then((data) => {
+            //   console.log(data);
+            // })
+    }
     return (
         <div className={styles.container}>
             <Image
@@ -25,7 +33,6 @@ const index = () => {
                 width={120}
                 height={78}
             />
-
 
             <div className={styles.header}>
                 <p>
@@ -43,13 +50,13 @@ const index = () => {
                         password: Yup.string().required("Please Enter Password !"),
                     })}
                     onSubmit={(values, { resetForm }) => {
-                        const newAddresses = { ...values }
-                        resetForm();
+                        login(values)
+                        // resetForm();
                     }}
                 >
                     {({ errors, touched }) => (
 
-                        <Form>                               
+                        <Form>
                             <div className={styles.fields}>
                                 <div className={styles.label}>
                                     <label htmlFor="email">Email</label>
@@ -67,6 +74,10 @@ const index = () => {
                                     ) : null}
                                 </div>
                                 <Field type="password" id="password" name="password" placeholder="Password" />
+                            </div>
+                            <div className={styles.checkbox}>
+                                <Field type="checkbox" id="checkbox" name="checkbox"/>
+                                <label htmlFor="checkbox">Remember me</label>
                             </div>
                             <div className={styles.button}>
                                 <button type="submit">Login</button>

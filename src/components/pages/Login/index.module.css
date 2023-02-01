@@ -28,6 +28,12 @@
 .fields input {
     @apply rounded border-[1px] w-[400px] h-[50px] px-4;
 }
+.checkbox_input {
+    @apply rounded border-[1px] w-[400px] h-[50px] px-4;
+}
+.checkbox {
+    @apply flex items-center justify-around p-[3px] w-[139px] h-6 pt-2.5 font-bold text-[#6251DD];
+}
 .container  button {
     @apply  self-center text-white text-2xl bg-[#EF6B4A] w-full h-[50px] rounded mt-[120px];
 }

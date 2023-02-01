@@ -27,7 +27,7 @@
     @apply text-[10px] text-red-500 ml-4 pt-1 ;
 }
 .fields input {
-    @apply rounded border-[1px] w-[400px] h-[50px] px-4;
+    @apply rounded border-[1px] w-[400px] h-[60px] px-4;
 }
 
 .container  button {

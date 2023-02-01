@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './index.module.css'
 import {
     Formik,
@@ -10,13 +10,24 @@ import Image from 'next/image'
 import User from '../../../../types/user'
 
 const initialValues: User = {
-    firstName: "",
-    lastName: "",
+    name: "",
     email: "",
     password: "",
 }
 
 const index = () => {
+    const register = (values: User) => {
+        console.log(values)
+        fetch('/api/register', {
+            method: 'POST',
+            body: JSON.stringify(values),
+            // signal
+          }).then((res) => console.log(res))
+            // .then((data) => {
+            //   console.log(data);
+            // })
+    }
+
     return (
         <div className={styles.container}>
             <Image
@@ -25,8 +36,6 @@ const index = () => {
                 width={120}
                 height={78}
             />
-
-
             <div className={styles.header}>
                 <p>
                     Welcome back!
@@ -39,16 +48,16 @@ const index = () => {
                 <Formik
                     initialValues={initialValues}
                     validationSchema={Yup.object().shape({
-                        firstName: Yup.string().required("Please Enter First Name !"),
-                        lastName: Yup.string().required("Please Enter Last Name !"),
+                        name: Yup.string().required("Please Enter Name !"),
                         email: Yup.string().email().required("Please Enter Email !"),
                         password: Yup.string().min(6, 'Too Short!').max(20, 'Too Long!')
-                        .matches(/^[a-z]+$/, 'Password can only contain Latin letters.')
+                        .matches(/^[a-zA-Z0-9_]*$/, 'Password can only contain Latin letters.')
                         .required("Please Enter Password !"),
                     })}
                     onSubmit={(values, { resetForm }) => {
-                        const newAddresses = { ...values }
-                        resetForm();
+                        register(values)
+                        console.log(values)
+                        // resetForm();
                     }}
                 >
                     {({ errors, touched }) => (
@@ -56,21 +65,12 @@ const index = () => {
                         <Form>
                             <div className={styles.fields}>
                                 <div className={styles.label}>
-                                    <label htmlFor="firstName">First Name </label>
-                                    {errors.firstName && touched.firstName ? (
-                                        <p>{errors.firstName}</p>
+                                    <label htmlFor="name">First Name </label>
+                                    {errors.name && touched.name ? (
+                                        <p>{errors.name}</p>
                                     ) : null}
                                 </div>
-                                <Field id="firstName" name="firstName" placeholder="First Name" />
-                            </div>
-                            <div className={styles.fields}>
-                                <div className={styles.label}>
-                                    <label htmlFor="lastName">Last Name</label>
-                                    {errors.lastName && touched.lastName ? (
-                                        <p>{errors.lastName}</p>
-                                    ) : null}
-                                </div>
-                                <Field id="lastName" name="lastName" placeholder="Last Name" />
+                                <Field id="name" name="name" placeholder="Name" />
                             </div>
                             <div className={styles.fields}>
                                 <div className={styles.label}>

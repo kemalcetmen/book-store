@@ -2,7 +2,7 @@
     @apply w-full flex flex-col ;
 }
 .the_swiper {
-    @apply w-full h-[440px] mb-[92px] ;
+    @apply w-full h-[440px] mb-[50px] ;
 }
 .texts {
     @apply  text-white w-[426px] font-medium;
@@ -26,8 +26,6 @@
     background-repeat: no-repeat;
     background-position: 5% 68%;    
     background-size: cover;
-
-
 }
 
 .category_header {
