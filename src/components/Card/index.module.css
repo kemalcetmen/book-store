@@ -32,16 +32,16 @@
 .imageH {
     @apply h-[180px] w-[135px] relative rounded
 }
-.imageH > img {
+.imageH img {
     @apply rounded	
 }
 .footerH {
     @apply py-2.5 pl-5 h-full w-[170px] flex flex-col justify-between
 }
-.textsH > h4 {
+.textsH h4 {
     @apply text-lg font-semibold mb-1
 }
-.textsH > p {
+.textsH p {
     @apply text-sm font-semibold opacity-60
 }
 .priceH {

@@ -37,7 +37,7 @@
 .container  button {
     @apply  self-center text-white text-2xl bg-[#EF6B4A] w-full h-[50px] rounded mt-[56px];
 }
-.container  .the_button {
+.container .the_button {
     @apply flex justify-center items-center self-center border-[1px] border-[#6251DD] mt-1
     text-[#6251DD] text-2xl w-[400px] h-[50px] rounded ;
 }

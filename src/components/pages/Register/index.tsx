@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styles from './index.module.css'
 import {
     Formik,
@@ -10,6 +10,7 @@ import Image from 'next/image'
 import User from '../../../../types/user'
 import { useRouter } from 'next/router'
 import Link from 'next/link';
+import logo from "../../../../public/Logo.svg"
 
 const initialValues: User = {
     name: "",
@@ -37,7 +38,7 @@ const index = () => {
     return (
         <div className={styles.container}>
             <Image
-                src="./logo.svg"
+                src={logo}
                 alt="Logo"
                 width={120}
                 height={78}

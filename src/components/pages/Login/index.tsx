@@ -12,6 +12,7 @@ import { useAppDispatch } from '@/store'
 import { addtoken } from '@/features/tempTokenSlice'
 import { useRouter } from 'next/router'
 import Link from 'next/link';
+import logo from "../../../../public/Logo.svg"
 
 const initialValues: User = {
     email: "",
@@ -43,7 +44,7 @@ const index = () => {
     return (
         <div className={styles.container}>
             <Image
-                src="./logo.svg"
+                src={logo}
                 alt="Logo"
                 width={120}
                 height={78}

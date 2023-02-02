@@ -20,7 +20,7 @@
 .image {
     @apply h-[450px] w-[300px] relative	rounded
 }
-.image >img {
+.image img {
     @apply rounded
 }
 .texts {
@@ -39,10 +39,10 @@
     @apply mt-5 w-[44px] h-[44px] rounded-full bg-[#F4F4FF] flex 
     justify-center items-center cursor-pointer
 }
-.texts_content > h3 {
+.texts_content h3 {
     @apply text-2xl font-semibold pb-[10px]
 }
-.texts_content > p {
+.texts_content p {
     @apply text-xl opacity-60 text-[#090937]
 }
 

@@ -37,10 +37,6 @@
 .category_view {
     @apply text-xl text-[#EF6B4A] pr-12 cursor-pointer
 }
-.cards>ul {
+.cards ul {
     @apply flex-nowrap	mb-[60px]
 }
-/* .cards > ul > li  {
-    @apply inline	
-  
-} */
