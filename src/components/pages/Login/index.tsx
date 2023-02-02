@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './index.module.css'
 import {
     Formik,
@@ -8,6 +8,10 @@ import {
 import * as Yup from 'yup';
 import Image from 'next/image'
 import User from '../../../../types/user'
+import { useAppDispatch } from '@/store'
+import { addtoken } from '@/features/tempTokenSlice'
+import { useRouter } from 'next/router'
+import Link from 'next/link';
 
 const initialValues: User = {
     email: "",
@@ -15,15 +19,26 @@ const initialValues: User = {
 }
 
 const index = () => {
+    const dispatch = useAppDispatch()
+    const [checked, setChecked] = useState(false)
+    const router = useRouter()
+
     const login = (values: User) => {
         fetch('/api/auth/login', {
             method: 'POST',
             body: JSON.stringify(values),
-            // signal
-          }).then((res) => console.log(res))
-            // .then((data) => {
-            //   console.log(data);
-            // })
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                if (checked) {
+                    localStorage.setItem("token", data.action_login.token)
+                }
+                dispatch(addtoken(data.action_login.token))
+                router.push("/")
+            })
+    }
+    const check = () => {
+        setChecked(checked => !checked)
     }
     return (
         <div className={styles.container}>
@@ -51,7 +66,7 @@ const index = () => {
                     })}
                     onSubmit={(values, { resetForm }) => {
                         login(values)
-                        // resetForm();
+                        resetForm();
                     }}
                 >
                     {({ errors, touched }) => (
@@ -76,7 +91,7 @@ const index = () => {
                                 <Field type="password" id="password" name="password" placeholder="Password" />
                             </div>
                             <div className={styles.checkbox}>
-                                <Field type="checkbox" id="checkbox" name="checkbox"/>
+                                <input type="checkbox" id="checkbox" name="checkbox" onClick={check} />
                                 <label htmlFor="checkbox">Remember me</label>
                             </div>
                             <div className={styles.button}>
@@ -86,7 +101,10 @@ const index = () => {
                     )}
                 </Formik>
             </div>
-            <div className={styles.the_button}>Register</div>
+            <Link href="/register">
+                <div className={styles.the_button}>Register</div>
+            </Link>
+
         </div>
     )
 }

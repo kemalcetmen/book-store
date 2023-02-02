@@ -5,18 +5,29 @@ import Head from 'next/head';
 import type { LayoutProps } from '../../../../types/pageWithLayout'
 import { fetchBooks } from '@/features/productsSlice'
 import { useAppDispatch, useAppSelector } from '@/store'
+import { useRouter } from 'next/router'
 
 interface Props {
     children: React.ReactNode;
 }
 
-const index : LayoutProps = ({ children }: Props) => {
+const index: LayoutProps = ({ children }: Props) => {
+    const router = useRouter()
     const dispatch = useAppDispatch()
-    const {loading, error} = useAppSelector((state) => state.products)
+    const { tempToken } = useAppSelector((state) => state.tempToken)
 
+    console.log("tempToken",tempToken)
     useEffect(() => {
-        dispatch(fetchBooks());
-    }, []);
+        if (typeof window !== "undefined") {
+            const token = localStorage.getItem("token")
+            if (!token || !tempToken) {
+                router.push("/login")
+            }else {
+                dispatch(fetchBooks());
+            }
+        }
+    }, [])
+
     return (
         <>
             <Head>

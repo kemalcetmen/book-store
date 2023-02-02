@@ -8,6 +8,8 @@ import {
 import * as Yup from 'yup';
 import Image from 'next/image'
 import User from '../../../../types/user'
+import { useRouter } from 'next/router'
+import Link from 'next/link';
 
 const initialValues: User = {
     name: "",
@@ -16,16 +18,19 @@ const initialValues: User = {
 }
 
 const index = () => {
+    const router = useRouter()
+
     const register = (values: User) => {
-        console.log(values)
         fetch('/api/auth/register', {
             method: 'POST',
             body: JSON.stringify(values),
-            // signal
-          }).then((res) => console.log(res))
-            // .then((data) => {
-            //   console.log(data);
-            // })
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.action_register) {
+                    router.push("/login")
+                }
+            })
     }
 
     return (
@@ -51,13 +56,12 @@ const index = () => {
                         name: Yup.string().required("Please Enter Name !"),
                         email: Yup.string().email().required("Please Enter Email !"),
                         password: Yup.string().min(6, 'Too Short!').max(20, 'Too Long!')
-                        .matches(/^[a-zA-Z0-9_]*$/, 'Password can only contain Latin letters.')
-                        .required("Please Enter Password !"),
+                            .matches(/^[a-zA-Z0-9_]*$/, 'Password can only contain Latin letters.')
+                            .required("Please Enter Password !"),
                     })}
                     onSubmit={(values, { resetForm }) => {
                         register(values)
-                        console.log(values)
-                        // resetForm();
+                        resetForm();
                     }}
                 >
                     {({ errors, touched }) => (
@@ -97,7 +101,9 @@ const index = () => {
                     )}
                 </Formik>
             </div>
-            <div className={styles.the_button}>Login</div>
+            <Link href="/login">
+                <div className={styles.the_button}>Login</div>
+            </Link>
 
         </div>
     )

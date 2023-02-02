@@ -23,12 +23,13 @@ export default function userHandler(req: NextApiRequest, res: NextApiResponse) {
       else { return Error }
     })
     .then(json => {
+      console.log("json", json)
+
       if (json.action_login.token) {
         res.status(200).json(json)
       }
       res.status(400).json(json)
 
-      console.log("json", json)
     })
     .catch(err => console.error('error:' + err));
 }
