@@ -25,8 +25,8 @@ const index = () => {
                 >
                     {
                         [...Array(3)].map((e, i) =>
-                            <SwiperSlide>
-                                <div key={i} className={styles.slide_container}>
+                            <SwiperSlide key={i} >
+                                <div className={styles.slide_container}>
                                     <div className={styles.image_container}>
                                         <div className={styles.texts}>
                                             <p>25% discount</p>
