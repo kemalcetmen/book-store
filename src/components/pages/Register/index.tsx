@@ -47,7 +47,7 @@ const index = () => {
                     Welcome back!
                 </p>
                 <h1>
-                    Login to your account
+                    Register
                 </h1>
             </div>
             <div className={styles.form}>
