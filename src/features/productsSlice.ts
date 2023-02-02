@@ -5,7 +5,6 @@ import { Book } from "../../types/book"
 
 export const fetchBooks = createAsyncThunk("fetchBooks", async () => {
     const { data } = await axios.get(`/api/categories/categories`);
-    // console.log(data);
     let books: Book[] = []
     const categories = data.category
 
@@ -13,9 +12,6 @@ export const fetchBooks = createAsyncThunk("fetchBooks", async () => {
         const { data } = await axios.get(`/api/categories/${category.id}`);
 
         for (const book of data.product) {
-            // const { data } = await axios.get(`/api/coverimage/${book.cover.split(".")[0]}`);
-
-            // const { data } = await axios.post(`https://assign-api.piton.com.tr/api/rest/cover_image`);
             const { data } = await axios.post('https://assign-api.piton.com.tr/api/rest/cover_image', {
                 fileName: book.cover,
             })
@@ -29,7 +25,6 @@ export const fetchBooks = createAsyncThunk("fetchBooks", async () => {
             books.push(onebook)
         }
     }
-    console.log(books)
     return {
         books:
             books,
@@ -57,8 +52,6 @@ const productsSlice = createSlice({
     name: "products",
     initialState,
     reducers: {
-        // add: (state, action: PayloadAction<string>) => {
-        // },
     },
     extraReducers: (builder) => {
         builder.addCase(fetchBooks.pending, (state) => {
@@ -79,4 +72,3 @@ const productsSlice = createSlice({
 })
 
 export default productsSlice.reducer
-// export const { add } = productsSlice.actions

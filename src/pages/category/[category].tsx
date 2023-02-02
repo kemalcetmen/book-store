@@ -13,7 +13,7 @@ export default function index() {
   return (
     <>
       {
-        theCategory ? <CategoryPage categoryName={category} /> : "There is no category you want"
+        theCategory ? <CategoryPage categoryName={category} /> : "The category you want does not exist"
       }
     </>
   )

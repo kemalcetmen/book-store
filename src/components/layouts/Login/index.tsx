@@ -1,7 +1,5 @@
 import React from 'react'
-// import styles from './index.module.css'
 import Head from 'next/head';
-import Image from 'next/image';
 import styles from './index.module.css'
 import type { LayoutProps } from '../../../../types/pageWithLayout'
 

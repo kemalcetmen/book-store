@@ -17,7 +17,8 @@ const index = ({ book, horizontal }: Props) => {
                 <Image
                     src={book.cover}
                     alt={book.name}
-                    fill
+                    height={300}
+                    width={200}
                 />
             </div>
             <div className={!horizontal ? styles.footer : styles.footerH}>

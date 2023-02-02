@@ -42,8 +42,8 @@ const index = () => {
             </div>
             <div className={styles.categories}>
                 {
-                    categories.map((category) =>
-                        <div className={styles.one_category}>
+                    categories.map((category,i) =>
+                        <div key={i} className={styles.one_category}>
                             <div className={styles.category_header}>
                                 <div className={styles.category_title}>
                                     {category.name}

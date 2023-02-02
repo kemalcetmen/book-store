@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-// import styles from './index.module.css'
 import Header from './Header'
 import Head from 'next/head';
 import type { LayoutProps } from '../../../../types/pageWithLayout'
@@ -16,11 +15,10 @@ const index: LayoutProps = ({ children }: Props) => {
     const dispatch = useAppDispatch()
     const { tempToken } = useAppSelector((state) => state.tempToken)
 
-    console.log("tempToken",tempToken)
     useEffect(() => {
         if (typeof window !== "undefined") {
             const token = localStorage.getItem("token")
-            if (!token || !tempToken) {
+            if (!token && !tempToken) {
                 router.push("/login")
             }else {
                 dispatch(fetchBooks());

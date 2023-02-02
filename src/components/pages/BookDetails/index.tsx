@@ -25,7 +25,8 @@ const index = ({ book }: Props) => {
                         <Image
                             src={book.cover}
                             alt={book.name}
-                            fill
+                            height={450}
+                            width={300}
                         />
                     </div>
                 </div>

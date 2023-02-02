@@ -11,7 +11,7 @@ export default function index() {
   return (
     <>
       {
-        theBook ? <BookDetails book={theBook} /> : "There is no book you want"
+        theBook ? <BookDetails book={theBook} /> : "The book you want does not exist"
       }
     </>
   )

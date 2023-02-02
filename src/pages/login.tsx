@@ -1,6 +1,4 @@
-import Image from 'next/image'
 import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
 import LoginPage from '@/components/pages/Login'
 
 import LoginLayout from '@/components/layouts/Login'
