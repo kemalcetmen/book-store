@@ -44,7 +44,7 @@ const index = () => {
             />
             <div className={styles.header}>
                 <p>
-                    Welcome back!
+                    Welcome
                 </p>
                 <h1>
                     Register
