@@ -3,6 +3,7 @@ import Header from './Header'
 import Head from 'next/head';
 import type { LayoutProps } from '../../../../types/pageWithLayout'
 import { fetchBooks } from '@/features/productsSlice'
+import { addtoken } from '@/features/tempTokenSlice'
 import { useAppDispatch, useAppSelector } from '@/store'
 import { useRouter } from 'next/router'
 
@@ -20,8 +21,17 @@ const index: LayoutProps = ({ children }: Props) => {
             const token = localStorage.getItem("token")
             if (!token && !tempToken) {
                 router.push("/login")
-            }else {
+            } else {
                 dispatch(fetchBooks());
+            }
+        }
+    }, [])
+    
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            const token = localStorage.getItem("token")
+            if (token && !tempToken) {
+                dispatch(addtoken(token))
             }
         }
     }, [])

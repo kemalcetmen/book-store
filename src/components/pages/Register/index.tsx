@@ -28,6 +28,7 @@ const index = () => {
             .then((res) => res.json())
             .then((data) => {
                 if (data.action_register) {
+                    localStorage.setItem("id", data.action_register.id)
                     router.push("/login")
                 }
             })

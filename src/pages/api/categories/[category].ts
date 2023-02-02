@@ -1,11 +1,11 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-const { THE_URl = '' } = process.env;
+const { THE_URL = '' } = process.env;
 
 export default function userHandler(req: NextApiRequest, res: NextApiResponse) {
     const { category } = req.query
 
-    const url = `${THE_URl}products/${category}`
+    const url = `${THE_URL}products/${category}`
 
     console.log(category)
     const options = {

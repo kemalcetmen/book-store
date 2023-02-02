@@ -1,11 +1,11 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-const { THE_URl = '' } = process.env;
+const { THE_URL = '' } = process.env;
 
 export default function userHandler(req: NextApiRequest, res: NextApiResponse) {
   const { body } = req
 
-  const url = `${THE_URl}register`
+  const url = `${THE_URL}register`
 
   console.log(body)
   const options = {

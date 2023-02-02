@@ -20,23 +20,23 @@
     @apply text-base font-semibold opacity-60
 }
 .price {
-    @apply self-end text-2xl text-[#6251DD] font-bold
+    @apply w-[90px] self-end text-xl text-end text-[#6251DD] font-bold
 }
 
 .containerH {
     @apply bg-[#f4f4ff] w-[320px] h-[200px] p-2.5
-    flex flex-row items-center
+    flex flex-row items-center justify-between
     border-[1px] border-[#ddddeb]
     rounded	cursor-pointer
 }
 .imageH {
-    @apply h-[180px] w-[120px] relative rounded
+    @apply h-[180px] w-[135px] relative rounded
 }
 .imageH > img {
     @apply rounded	
 }
 .footerH {
-    @apply py-2.5 pl-5 h-full w-auto flex flex-col justify-between
+    @apply py-2.5 pl-5 h-full w-[170px] flex flex-col justify-between
 }
 .textsH > h4 {
     @apply text-lg font-semibold mb-1
